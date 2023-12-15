@@ -19,7 +19,7 @@ def hangman():
          w=[letter if letter in used_letter else '-' for letter in words]
          print(' '.join(w))
          user_letter=input('enter the letter ').upper()
-         if user_letter in alpha and used_letter:
+         if user_letter in alpha - used_letter:
              used_letter.add(user_letter)
              if user_letter in word_letter:
                  word_letter.remove(user_letter)
@@ -29,9 +29,16 @@ def hangman():
              print("you have already enter the letter try again")
          else:
              print("inavalid input try again!!!")
-        
+     if word_letter :
+         print("you lose")
+     else:
+         print("you win")
+     print("the word is ",words);
+    
+
              
 hangman()
+
    
         
 
